@@ -3,7 +3,6 @@ import { Header } from './header';
 import './homepage.css';
 import Cookies from 'universal-cookie';
 
-
 export class Homepage extends Component {
     constructor(props) {
         super(props);
@@ -17,11 +16,9 @@ export class Homepage extends Component {
 	static getDerivedStateFromProps(props,state){
 		const cookies = new Cookies();
 		cookies.set('input', state.input, { path: '/' });
-		cookies.set('message', JSON.stringify(state.message), { path: '/' });
-		
+		cookies.set('message', JSON.stringify(state.message), { path: '/' });		
 		return state
 	}
-
 
 	// Decode Function run onChange of Input
 	decode(input){
@@ -32,8 +29,6 @@ export class Homepage extends Component {
 				res => this.setState({message:res.decoded})
 			);
 		});
-		
-		//console.log(cookies.get('message')); 
 	}
 
 	numInput(e){
@@ -51,10 +46,6 @@ export class Homepage extends Component {
 		
 	}
 
-	componentDidMount() {
-		
-	}
-	
 	render() {
 		const input = this.state.input==="undefined"?'':this.state.input;
 		const message = this.state.message==="undefined"?'':this.state.message;
