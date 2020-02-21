@@ -20,7 +20,7 @@ export class Homepage extends Component {
 		return state
 	}
 
-	// Decode Function run onChange of Input
+	// Decode Function run onChange of Input calling Express server running on Port 3001
 	decode(input){
 		const url = "http://localhost:3001/?message="+input
 			fetch(url, {method: 'GET'})
@@ -40,12 +40,10 @@ export class Homepage extends Component {
 			const message = this.decode(input);
 			this.setState({message:message});
 		}
-		else{
-			this.setState({message:"Only Numeric Numbers allowed!"});
-		}
+		else{this.setState({message:"Only Numeric Numbers allowed!"});}
 		
 	}
-
+	// Render Page
 	render() {
 		const input = this.state.input==="undefined"?'':this.state.input;
 		const message = this.state.message==="undefined"?'':this.state.message;

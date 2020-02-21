@@ -1,7 +1,7 @@
   @font-face {
     font-family: 'D-DINCondensed';
     src: url('../fonts/D-DINCondensed-Bold.woff2') format('woff2'),
-        url('../fonts/D-DINCondensed-Bold.woff') format('woff');
+         url('../fonts/D-DINCondensed-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -14,14 +14,13 @@
     background-color: #fff;
     font-family: 'D-DINCondensed';
     overflow: auto;
-  max-height: 88vh;
   }
 
   .headMain {
     margin:15px;
-      color: #272833;
-      font-size: 18pt;
-      text-align: left;    
+    color: #272833;
+    font-size: 18pt;
+    text-align: left;    
   }
 
   .decoder {
