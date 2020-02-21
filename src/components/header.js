@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import './header.css';
 
-
 export class Header extends PureComponent {
     render() {
 		return (
@@ -10,7 +9,4 @@ export class Header extends PureComponent {
             </div>
         );
     }
-
 }
-
-
