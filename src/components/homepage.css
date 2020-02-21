@@ -1,22 +1,21 @@
-@font-face {
-  font-family: 'D-DINCondensed';
-  src: url('../fonts/D-DINCondensed-Bold.woff2') format('woff2'),
-       url('../fonts/D-DINCondensed-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  @font-face {
+    font-family: 'D-DINCondensed';
+    src: url('../fonts/D-DINCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/D-DINCondensed-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-}
-#body {
-  position: relative;
-  top:74px;
-  left: 0;
-  right:0;
-  background-color: #fff;
-  font-family: 'D-DINCondensed';
-  overflow: auto;
-max-height: 88vh;
-}
-
+  }
+  #body {
+    position: relative;
+    top:74px;
+    left: 0;
+    right:0;
+    background-color: #fff;
+    font-family: 'D-DINCondensed';
+    overflow: auto;
+  max-height: 88vh;
+  }
 
   .headMain {
     margin:15px;
@@ -40,6 +39,10 @@ max-height: 88vh;
 
   .decoder .inputBox {
     padding:0px 0px 0px 40px;
+  }
+
+  #numInput {
+    width: 218px;
   }
 
   .secretMessage {

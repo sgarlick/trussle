@@ -1,46 +1,63 @@
 import React, { Component } from 'react';
 import { Header } from './header';
 import './homepage.css';
+import Cookies from 'universal-cookie';
+
 
 export class Homepage extends Component {
     constructor(props) {
         super(props);
 		this.state = { 
-			message: ''
+			input: new Cookies().get('input'),
+			message: new Cookies().get('message')
 		};			
 	}
 
+	// set cookies on any state change
+	static getDerivedStateFromProps(props,state){
+		const cookies = new Cookies();
+		cookies.set('input', state.input, { path: '/' });
+		cookies.set('message', JSON.stringify(state.message), { path: '/' });
+		
+		return state
+	}
+
+
 	// Decode Function run onChange of Input
 	decode(input){
-		// Split numbers on spaces
-		var numberArray = input.split(" ");
-		// message conversion using fromCharcode counting from 65
-		let message = numberArray.map((numgroup)=>{
-			let num = parseInt(numgroup);
-			while(num>=27){
-					num = num/27;
-			} 
-			if (Number.isInteger(num)){
-				return String.fromCharCode(num+64);
-			}
-			else return ' ';
-		}); 
-		return message
+		const url = "http://localhost:3001/?message="+input
+			fetch(url, {method: 'GET'})
+			.then(response => {
+			response.json().then(			
+				res => this.setState({message:res.decoded})
+			);
+		});
+		
+		//console.log(cookies.get('message')); 
 	}
 
 	numInput(e){
 		const input = e.target.value;
+		this.setState({input:input});
+		// Only decode numbers and spaces
 		if (input.match(/^[0-9\s]+$/) != null){
+			// call to decode message function 
 			const message = this.decode(input);
-			console.log(message)
 			this.setState({message:message});
 		}
 		else{
 			this.setState({message:"Only Numeric Numbers allowed!"});
 		}
+		
+	}
+
+	componentDidMount() {
+		
 	}
 	
 	render() {
+		const input = this.state.input==="undefined"?'':this.state.input;
+		const message = this.state.message==="undefined"?'':this.state.message;
 		return (
 			<div>
 				<div id="header">
@@ -50,10 +67,10 @@ export class Homepage extends Component {
 					<div className="headMain">Numericode Decoder</div>
 					<div className="decoder">
 						<p>Numeric Code:</p>
-						<div className="inputBox"><input id="numInput" onChange={(e)=>this.numInput(e)} placeholder="Enter your Numeric Code"></input></div>
+						<div className="inputBox"><input id="numInput" onChange={(e)=>this.numInput(e)} placeholder="Enter your Numeric Code" value={input}></input></div>
 						<div className="secretMessage">
 							<div>Secret Message</div>
-							<div id="messageResponse">{this.state.message}</div>
+							<div id="messageResponse">{message}</div>
 						</div>
 					</div>
 				</div>
