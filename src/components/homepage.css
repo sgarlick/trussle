@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'D-DINCondensed';
+  src: url('../fonts/D-DINCondensed-Bold.woff2') format('woff2'),
+       url('../fonts/D-DINCondensed-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+#body {
+  position: relative;
+  top:74px;
+  left: 0;
+  right:0;
+  background-color: #fff;
+  font-family: 'D-DINCondensed';
+  overflow: auto;
+max-height: 88vh;
+}
+
+
+  .headMain {
+    margin:15px;
+      color: #272833;
+      font-size: 18pt;
+      text-align: left;    
+  }
+
+  .decoder {
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    border: solid 2px #272833;
+    background-color: #ccc;
+  }
+
+  .decoder p {
+    padding:10px 0px 0px 40px;
+    margin-bottom: 4px;
+  }
+
+  .decoder .inputBox {
+    padding:0px 0px 0px 40px;
+  }
+
+  .secretMessage {
+    font-size: 18pt;
+      text-align: center;
+      width:100%;
+      padding-top:20px; 
+  }
+
+  .secretMessage div {
+    margin-bottom: 4px;
+  }
+
+  #messageResponse {
+    width:220px;
+    margin: auto;
+    border: solid 1px #ccc;
+    background-color: #eee;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 14pt;
+  }
+

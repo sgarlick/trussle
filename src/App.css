@@ -1,0 +1,15 @@
+
+.clear { clear: both;}
+
+body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        z-index:1;
+        -webkit-overflow-scrolling: touch;
+        overflow:hidden;
+    }
+
+    
+            
+
