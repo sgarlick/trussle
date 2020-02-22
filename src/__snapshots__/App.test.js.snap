@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link renders correctly 1`] = `
+<div>
+  <div
+    id="header"
+  >
+    <div
+      className="headerContents"
+    >
+      <div
+        className="headerMain"
+      >
+        Trussle
+      </div>
+    </div>
+  </div>
+  <div
+    id="body"
+  >
+    <div
+      className="headMain"
+    >
+      Numericode Decoder
+    </div>
+    <div
+      className="decoder"
+    >
+      <p>
+        Numeric Code:
+      </p>
+      <div
+        className="inputBox"
+      >
+        <input
+          id="numInput"
+          onChange={[Function]}
+          placeholder="Enter your Numeric Code"
+        />
+      </div>
+      <div
+        className="secretMessage"
+      >
+        <div>
+          Secret Message
+        </div>
+        <div
+          id="messageResponse"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

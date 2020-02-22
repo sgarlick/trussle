@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/trussle/static/css/main.e0af227e.chunk.css",
+    "main.js": "/trussle/static/js/main.ce6e5efb.chunk.js",
+    "main.js.map": "/trussle/static/js/main.ce6e5efb.chunk.js.map",
+    "runtime-main.js": "/trussle/static/js/runtime-main.64a22a55.js",
+    "runtime-main.js.map": "/trussle/static/js/runtime-main.64a22a55.js.map",
+    "static/js/2.44c5a9c4.chunk.js": "/trussle/static/js/2.44c5a9c4.chunk.js",
+    "static/js/2.44c5a9c4.chunk.js.map": "/trussle/static/js/2.44c5a9c4.chunk.js.map",
+    "index.html": "/trussle/index.html",
+    "precache-manifest.a1fdca80796abf5e3337d464d8a53e7d.js": "/trussle/precache-manifest.a1fdca80796abf5e3337d464d8a53e7d.js",
+    "service-worker.js": "/trussle/service-worker.js",
+    "static/css/main.e0af227e.chunk.css.map": "/trussle/static/css/main.e0af227e.chunk.css.map",
+    "static/js/2.44c5a9c4.chunk.js.LICENSE.txt": "/trussle/static/js/2.44c5a9c4.chunk.js.LICENSE.txt",
+    "static/media/homepage.css": "/trussle/static/media/D-DINCondensed-Bold.a78d1679.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64a22a55.js",
+    "static/js/2.44c5a9c4.chunk.js",
+    "static/css/main.e0af227e.chunk.css",
+    "static/js/main.ce6e5efb.chunk.js"
+  ]
+}

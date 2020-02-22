@@ -15,10 +15,16 @@ This will install the Node Modules required to run the Application.
 Runs the app in the development mode.<br>
 
 This will run the Front End on [http://localhost:3000](http://localhost:3000).
-The backend is running on http://localhost:3001/
+The backend is running on http://localhost:3001/server
 
-The backend receive one parameter "message" as a query string parameter
-http://localhost:3001/?message=1167
+### Starting Server and Front End seperately
+
+To start the server use 'npm run server'
+
+To start the Front End use 'npm start'
+
+The backend receives one parameter "message" as a query string parameter
+http://localhost:3001/server?message=1167
 
 The page will reload if you make edits.
 

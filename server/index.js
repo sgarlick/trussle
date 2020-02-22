@@ -7,7 +7,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
-app.get('/', (req, res) => {
+app.get('/trussle/server', (req, res) => {
   const message = req.query.message;
   var numberArray = message.split(" ");
 	// message conversion using fromCharcode counting from 65

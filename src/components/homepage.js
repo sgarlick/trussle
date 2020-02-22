@@ -22,7 +22,9 @@ export class Homepage extends Component {
 
 	// Decode Function run onChange of Input calling Express server running on Port 3001
 	decode(input){
-		const url = "http://localhost:3001/?message="+input
+		const host = window.location.hostname;
+		//console.log(host);
+		const url = "http://"+ host +":3001/trussle/server/?message="+input
 			fetch(url, {method: 'GET'})
 			.then(response => {
 			response.json().then(			
