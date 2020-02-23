@@ -16,21 +16,25 @@ export class Homepage extends Component {
 	static getDerivedStateFromProps(props,state){
 		const cookies = new Cookies();
 		cookies.set('input', state.input, { path: '/' });
-		cookies.set('message', JSON.stringify(state.message), { path: '/' });		
+		cookies.set('message', state.message, { path: '/' });		
 		return state
 	}
 
 	// Decode Function run onChange of Input calling Express server running on Port 3001
-	decode(input){
+	async decode(input){
 		const host = window.location.hostname;
-		//console.log(host);
 		const url = "http://"+ host +":3001/trussle/server/?message="+input
-			fetch(url, {method: 'GET'})
-			.then(response => {
-			response.json().then(			
-				res => this.setState({message:res.decoded})
-			);
-		});
+		try {
+			const res = await fetch(url);
+			if (res.status >= 400)
+			   throw new Error("something went wrong")
+			  await res.json().then(			  		
+				 		res => this.setState({message:res.decoded.join("")})
+				 	);
+		 } catch (err) {
+		   console.error(err);
+		   this.setState({message:"Decoding Service is not available. Please again try later."})
+		 }
 	}
 
 	numInput(e){
@@ -39,12 +43,11 @@ export class Homepage extends Component {
 		// Only decode numbers and spaces
 		if (input.match(/^[0-9\s]+$/) != null){
 			// call to decode message function 
-			const message = this.decode(input);
-			this.setState({message:message});
+			this.decode(input);
 		}
 		else{this.setState({message:"Only Numeric Numbers allowed!"});}
-		
 	}
+	
 	// Render Page
 	render() {
 		const input = this.state.input==="undefined"?'':this.state.input;

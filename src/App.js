@@ -9,15 +9,14 @@ function App() {
 	return (
 	<Router>
 		<Switch>
-    <Route exact path="/">
-		  		  <Homepage path={null}/>
-          </Route>
-          <Route exact path="/trussle">
-		  		  <Homepage path={null}/>
-          </Route>
-        </Switch>
-    </Router>
-			
+      <Route path="/">
+		  	<Homepage path={null}/>
+      </Route>
+      <Route path="/trussle">
+		    <Homepage path={null}/>
+      </Route>
+    </Switch>
+  </Router>		
 	);
 }
 
