@@ -36,6 +36,7 @@ exports[`Link renders correctly 1`] = `
           id="numInput"
           onChange={[Function]}
           placeholder="Enter your Numeric Code"
+          value=""
         />
       </div>
       <div
@@ -46,7 +47,9 @@ exports[`Link renders correctly 1`] = `
         </div>
         <div
           id="messageResponse"
-        />
+        >
+          
+        </div>
       </div>
     </div>
   </div>

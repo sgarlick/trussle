@@ -50,8 +50,6 @@ export class Homepage extends Component {
 	
 	// Render Page
 	render() {
-		const input = this.state.input==="undefined"?'':this.state.input;
-		const message = this.state.message==="undefined"?'':this.state.message;
 		return (
 			<div>
 				<div id="header">
@@ -61,10 +59,10 @@ export class Homepage extends Component {
 					<div className="headMain">Numericode Decoder</div>
 					<div className="decoder">
 						<p>Numeric Code:</p>
-						<div className="inputBox"><input id="numInput" onChange={(e)=>this.numInput(e)} placeholder="Enter your Numeric Code" value={input}></input></div>
+						<div className="inputBox"><input id="numInput" onChange={(e)=>this.numInput(e)} placeholder="Enter your Numeric Code" value={ this.state.input || "" }></input></div>
 						<div className="secretMessage">
 							<div>Secret Message</div>
-							<div id="messageResponse">{message}</div>
+							<div id="messageResponse">{ this.state.message || "" }</div>
 						</div>
 					</div>
 				</div>

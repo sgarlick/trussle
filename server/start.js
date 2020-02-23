@@ -1,2 +1,2 @@
 const app = require('./index.js')
-app.listen(3001)
+module.exports = app

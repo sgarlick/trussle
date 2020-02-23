@@ -24,7 +24,6 @@ app.get('/trussle/server', (req, res) => {
   res.send(JSON.stringify({ decoded: response }));
 });
 
-//module.exports = app
- app.listen(3001, () =>
+module.exports = app.listen(3001, () =>
    console.log('Express server is running on localhost:3001')
  );
